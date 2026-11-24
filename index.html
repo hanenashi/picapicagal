@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f6ee">
+  <meta name="description" content="Společné fotky na jednom místě.">
+  <title>Naše alba · Picapica</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="album-header">
+      <a class="wordmark" href="./" aria-label="Picapica, úvodní stránka">picapica</a>
+      <button id="album-back" class="album-back" type="button" hidden>← Všechna alba</button>
+      <h1 id="album-title">Naše alba</h1>
+      <p class="subtitle" id="album-subtitle">Fotky, které sdílíme</p>
+      <p class="photo-count" id="photo-count" aria-live="polite" hidden></p>
+    </header>
+
+    <section id="access-gate" class="access-gate" hidden>
+      <form id="access-form" class="access-card">
+        <p class="access-eyebrow">Jen pro naši partu</p>
+        <h2>Vítej zpátky.</h2>
+        <p>Pro otevření fotek napiš společné heslo.</p>
+        <label for="access-passphrase">Heslo</label>
+        <div class="access-row">
+          <input id="access-passphrase" type="password" autocomplete="off" required>
+          <button type="submit">Otevřít album</button>
+        </div>
+        <p id="access-message" class="access-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <main id="main-content" hidden>
+      <section id="album-home" class="album-home" hidden>
+        <div id="album-cards" class="album-cards"></div>
+      </section>
+      <div id="gallery" class="photo-grid" aria-label="Fotografie" hidden></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <p>Fotky tu brzy budou.</p>
+      </div>
+      <div id="error-state" class="empty-state" hidden>
+        <p>Galerii se nepodařilo načíst.</p>
+        <button type="button" id="retry-load" class="retry-button">Zkusit znovu</button>
+      </div>
+    </main>
+  </div>
+
+  <dialog id="viewer" class="viewer" aria-label="Prohlížeč fotografií">
+    <div class="viewer-top">
+      <span id="viewer-count" aria-live="polite"></span>
+      <button type="button" id="viewer-close" class="viewer-round" aria-label="Zavřít fotografii">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div id="viewer-stage" class="viewer-stage">
+      <img id="viewer-image" alt="">
+      <p id="viewer-error" class="viewer-error" hidden>Fotka není dostupná.</p>
+    </div>
+    <button type="button" id="viewer-prev" class="viewer-arrow viewer-prev" aria-label="Předchozí fotografie">‹</button>
+    <button type="button" id="viewer-next" class="viewer-arrow viewer-next" aria-label="Další fotografie">›</button>
+    <div class="viewer-bottom">
+      <p id="viewer-caption" class="viewer-caption"></p>
+      <a id="viewer-original" class="viewer-round" href="#" target="_blank" rel="noopener noreferrer" aria-label="Otevřít originál v nové kartě" title="Otevřít originál">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v13m0 0l-5-5m5 5l5-5M4 18v3h16v-3"/></svg>
+      </a>
+    </div>
+  </dialog>
+</body>
+</html>

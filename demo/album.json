@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "title": "Ukázkové album",
+  "subtitle": "Fiktivní fotky pro vyzkoušení",
+  "photos": [
+    {"id": "demo-1", "src": "demo/photos/reunion-1.jpg", "caption": "Zase spolu", "thumb": "demo/photos/reunion-1-thumb.jpg"},
+    {"id": "demo-2", "src": "demo/photos/reunion-2.jpg", "thumb": "demo/photos/reunion-2-thumb.jpg"},
+    {"id": "demo-3", "src": "demo/photos/reunion-3.jpg", "thumb": "demo/photos/reunion-3-thumb.jpg"},
+    {"id": "demo-4", "src": "demo/photos/reunion-4.jpg", "thumb": "demo/photos/reunion-4-thumb.jpg"},
+    {"id": "demo-5", "src": "demo/photos/reunion-5.jpg", "thumb": "demo/photos/reunion-5-thumb.jpg"},
+    {"id": "demo-6", "src": "demo/photos/reunion-6.jpg", "thumb": "demo/photos/reunion-6-thumb.jpg"}
+  ]
+}
